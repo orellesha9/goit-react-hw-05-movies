@@ -1,4 +1,4 @@
-import styles from "./single-post-page.module.css"
+// import styles from "./single-post-page.module.css"
 import SinglePost from "components/SinglePost/SinglePost";
 
 
