@@ -7,7 +7,8 @@ const Post = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
+ console.log(error);
+ console.log(loading);
   useEffect(() => {
     const fetchPosts = async () => {
       try {
