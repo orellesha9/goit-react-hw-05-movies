@@ -24,7 +24,7 @@ const SinglePost = () => {
       
     };
     fetchPost()
-  }, []);
+  }, );
   return (
     <div>
       {loading && <p>...Loading</p>}

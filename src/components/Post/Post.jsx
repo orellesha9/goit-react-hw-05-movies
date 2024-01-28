@@ -28,7 +28,7 @@ const Post = () => {
     </li>
   ));
   return (
-    <>
+    <> 
       {error && <p className={styles.error}>{error}</p>}
       {loading && <p>...Loading</p>}
       {Boolean(elements.length) && (
