@@ -20,7 +20,7 @@ const Post = () => {
       }
     };
     fetchPosts();
-  }, );
+  },[]);
 
   const elements = posts.map(({ id, title }) => (
     <li key={id} className={styles.ImageGalleryItem}>
