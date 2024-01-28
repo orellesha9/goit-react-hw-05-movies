@@ -7,8 +7,6 @@ const Post = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
- console.log(error);
- console.log(loading);
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -31,7 +29,12 @@ const Post = () => {
   ));
   return (
     <>
-      <ul>{elements}</ul>
+      {error && <p className={styles.error}>{error}</p>}
+      {loading && <p>...Loading</p>}
+      {Boolean(elements.length) && (
+        <ol className={styles.ImageGallery}>{elements}</ol>
+      )}
+      ;
     </>
   );
 };
