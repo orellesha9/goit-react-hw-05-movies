@@ -16,15 +16,15 @@ const SinglePost = () => {
         const { data } = await getPostById(id);
         console.log(data);
         setPost(data);
-      } catch {
+      } catch(error) {
         setError(error.message);
       } finally {
         setLoading(false);
       }
-      
     };
-    fetchPost()
-  }, );
+    fetchPost();
+}, [id]); 
+
   return (
     <div>
       {loading && <p>...Loading</p>}
