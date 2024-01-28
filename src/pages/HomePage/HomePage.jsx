@@ -1,4 +1,4 @@
-import styles from "./home-page.module.css"
+// import styles from "./home-page.module.css"
 import Post from "components/Post/Post";
 
 const HomePage =() => {
