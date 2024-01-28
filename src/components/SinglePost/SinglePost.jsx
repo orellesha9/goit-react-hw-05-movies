@@ -16,14 +16,16 @@ const SinglePost = () => {
         const { data } = await getPostById(id);
         console.log(data);
         setPost(data);
-      } catch(error) {
-        setError(error.message);
+      } catch (error) {
+        setError(error.message); // Використовуємо параметр error
       } finally {
         setLoading(false);
       }
     };
-    fetchPost();
-}, [id]); 
+
+    fetchPost(); // Викликаємо функцію fetchPost() всередині useEffect, якщо це потрібно
+}, [id]); // Вказуємо id як залежність
+
 
   return (
     <div>
