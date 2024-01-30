@@ -34,7 +34,7 @@ const Post = () => {
       {Boolean(elements.length) && (
         <ol className={styles.ImageGallery}>{elements}</ol>
       )}
-      ;
+      
     </>
   );
 };

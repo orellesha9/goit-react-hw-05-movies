@@ -14,13 +14,18 @@ export const getPostById = id => {
   return instance.get(`/3/movie/${id}?language=en-US`);
 };
 
+
+
 export const getAllPosts = () => {
   return instance.get('/3/trending/all/day?language=en-US');
 };
 
-export const searchPosts = (q, page = 1) => {
-  return instance.get(`&q=${q}&per_page=12&page=${page}`);
+export const searchPosts = (query) => {
+  return instance.get(`/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`);
 };
 // export const searchPost = search => {
 //     return axios.get("")
 // }
+export const getCommetsByPostId = (id) => {
+  return instance.get(`/3/search/movie?${id}&credits&language=en-US`);
+};
