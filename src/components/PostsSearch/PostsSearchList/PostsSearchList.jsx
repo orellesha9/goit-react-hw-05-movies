@@ -1,9 +1,11 @@
 import styles from "./posts-search-list.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const PostsSearchList = ({ items}) => {
+    const location = useLocation();
+
     const elements = items.map(({id, title}) => (<li key={id} className={styles.item}>
-        <Link to={`/posts/${id}`}>{title}</Link>
+        <Link to={`/posts/${id}`} state={{from: location}}>{title}</Link>
         {/* <p>{body}</p> */}
     </li>));
 console.log(elements);

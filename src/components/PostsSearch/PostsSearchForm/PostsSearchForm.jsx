@@ -39,7 +39,7 @@ const PostsSearchForm = ({ onSubmit }) => {
     return (
         <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.fieldGroup}>
-                <label htmlFor={searchId}>Enter search phrase</label>
+                <label htmlFor={searchId}></label>
                 <input id={searchId} ref={inputRef} value={state.search} onChange={handleChange} required type="text" name="search" placeholder="Enter search phrase" />
             </div>
             <button type="submit">Search</button>

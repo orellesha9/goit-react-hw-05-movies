@@ -1,6 +1,8 @@
 .menu {
   list-style: none;
   display: flex;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1); /* додає тінь знизу */
+padding: 10px;
 }
 
 .link {

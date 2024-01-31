@@ -1,0 +1,35 @@
+.img_title {
+  height: 400px;
+}
+
+.wrapper {
+  margin-top: 20px;
+  display: flex;
+}
+
+.title_text {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 20px;
+}
+.title {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.heading_of_points {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.link {
+display: flex;
+flex-direction: column;
+gap: 10px;
+border-radius: 10px;
+box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1); 
+padding: 10px;
+
+
+}

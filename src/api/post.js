@@ -27,5 +27,10 @@ export const searchPosts = (query) => {
 //     return axios.get("")
 // }
 export const getCommetsByPostId = (id) => {
-  return instance.get(`/3/search/movie?${id}&credits&language=en-US`);
+  return instance.get(`/3/movie/${id}/credits?language=en-US`);
+};
+
+
+export const getReviewsById = (id) => {
+  return instance.get(`/3/movie/${id}/reviews?language=en-US`);
 };

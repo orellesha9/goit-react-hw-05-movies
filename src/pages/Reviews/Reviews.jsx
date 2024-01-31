@@ -1,10 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getCommetsByPostId } from 'api/post';
+import { getReviewsById } from 'api/post';
 
-import styles from "./SinglePostComentPage.module.css"
+import styles from './reviews.module.css';
 
-const SinglePostComentsPage = () => {
+const Reviews = () => {
   const [coments, setComments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -16,8 +16,8 @@ const SinglePostComentsPage = () => {
     const fetchComments = async () => {
       try {
         setLoading(true);
-        const { data } = await getCommetsByPostId(id);
-        setComments(data.cast);
+        const { data } = await getReviewsById(id);
+        setComments(data.results);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -26,23 +26,24 @@ const SinglePostComentsPage = () => {
     };
     fetchComments();
   }, [id]);
-  const elements = coments.map(
-    ({ id, profile_path, original_name, character }) => (
-      <li key={id}>
-         <img src={`https://image.tmdb.org/t/p/original${profile_path}`} alt="" className={styles.img}/>
-        <h4>{original_name}</h4>
-        <p>{character}</p>
-      </li>
-    )
-  );
+  const elements = coments.map(({ id, author, content }) => (
+    <li key={id}>
+      <h3>Author: {author}</h3>
+      <p>{content}</p>
+    </li>
+  ));
 
   return (
     <>
       {loading && <p>...Loading</p>}
       {error && <p>{error}</p>}
-      {isComments && <ul>{elements}</ul>}
+      {isComments && coments.results !== 0 ? (
+        <ul className={styles.list}>{elements}</ul>
+      ) : (
+        <p>We don't have any comments for this movie.</p>
+      )}{' '}
     </>
   );
 };
 
-export default SinglePostComentsPage;
+export default Reviews;
